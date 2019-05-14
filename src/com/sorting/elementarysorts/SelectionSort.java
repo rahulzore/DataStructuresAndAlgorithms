@@ -1,9 +1,9 @@
-package sorting.elementarySorts;
+package com.sorting.elementarysorts;
 
 public class SelectionSort {
-
-	public static boolean less(Comparable v, Comparable w) {
-		return v.compareTo(w) < 0;
+	
+	public static boolean less(Comparable a, Comparable b) {
+		return a.compareTo(b) < 0;
 	}
 	
 	public static void exch(Comparable[] a, int i, int j) {
@@ -13,11 +13,13 @@ public class SelectionSort {
 	}
 	
 	public static void sort(Comparable[] a) {
+		
 		int N = a.length;
-		for(int i=0; i < N; i++) {
+		
+		for(int i=0; i<N; i++) {
 			int min = i;
-			for(int j = i+1; j < N ; j++) {
-				if(less(a[j], a[min])) {
+			for(int j=i+1; j<N; j++) {
+				if(less(a[j], a[j-1])) {
 					min = j;
 				}
 			}
